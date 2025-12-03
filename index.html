@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Hero — Gradient + Grid</title>
+
+    <!-- Official Tailwind CDN (supports arbitrary values) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Inter font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial;
+      }
+    </style>
+  </head>
+
+  <body class="antialiased">
+    <section
+      class="main relative min-h-screen overflow-hidden flex items-center"
+      aria-label="Hero"
+    >
+      <!-- Background gradient (bottom layer) -->
+      <div
+        class="absolute inset-0 -z-20"
+        style="
+          background: radial-gradient(
+              ellipse at top center,
+              rgba(255, 255, 255, 0.1) 0%,
+              rgba(255, 255, 255, 0) 60%
+            ),
+            linear-gradient(
+              135deg,
+              #0a0a0f 0%,
+              #0d1210 40%,
+              #0f1712 70%,
+              #000000 100%
+            );
+        "
+      ></div>
+
+      <!-- GRID (middle layer) -->
+      <div
+        class="absolute inset-0 -z-10 opacity-30 pointer-events-none"
+        style="
+          background-image: url('https://raw.githubusercontent.com/dubinc/grid/main/grid.svg');
+          background-size: 90px 90px;
+        "
+      ></div>
+
+      <!-- Content (z-10 so it sits above bg & grid) -->
+      <div class="container max-w-[1055px] mx-auto px-4 relative z-10">
+        <div class="inner max-w-[640px] mx-auto text-center">
+          <div class="mt-[80px] mb-[36px]">
+            <p class="text-[52px] font-semibold leading-tight text-white">
+              Supercharge your marketing efforts
+            </p>
+          </div>
+
+          <div class="max-w-[544px] mx-auto mt-[24px]">
+            <p class="text-[20px] text-gray-400 mb-[36px]">
+              Dub is the modern link attribution platform for short links,
+              conversion tracking, and affiliate programs.
+            </p>
+          </div>
+
+          <div
+            class="max-w-[320px] mx-auto flex items-center justify-center gap-6"
+          >
+            <button
+              class="rounded-xl px-5 py-2 text-[16px] bg-white text-black font-medium shadow-sm"
+            >
+              Start for free
+            </button>
+
+            <button
+              class="rounded-xl px-5 py-2 text-[16px] bg-gray-500/60 text-white font-medium"
+            >
+              Get a demo
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
